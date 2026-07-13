@@ -2,7 +2,7 @@ import { ChevronDown } from "lucide-react";
 
 function FilterSelect({ id, label, value, onChange, options }) {
   return (
-    <div className="relative flex-1 min-w-[160px]">
+    <div className="relative flex-1 min-w-40">
       <label htmlFor={id} className="sr-only">
         {label}
       </label>
