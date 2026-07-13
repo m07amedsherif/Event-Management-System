@@ -3,11 +3,12 @@ import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
 import AuthLayout from "../layouts/AuthLayout";
 
+import Events from "../pages/Events";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Requests from "../pages/Requests";
-import Registerations from "../pages/Registerations";
+import Registrations from "../pages/Registrations";
 import Favourites from "../pages/Favourites";
 
 import ProtectedRoute from "./ProtectedRoute";
@@ -24,6 +25,10 @@ export const Router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <Events />,
+      },
+      {
+        path: "/home",
         element: <Home />,
       },
       {
@@ -31,8 +36,8 @@ export const Router = createBrowserRouter([
         element: <Requests />,
       },
       {
-        path: "/registerations",
-        element: <Registerations />,
+        path: "/registrations",
+        element: <Registrations />,
       },
       {
         path: "/favourites",
