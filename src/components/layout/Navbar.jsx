@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import navLogo from "public/navLogo.png";
 import { NAV_LINKS } from "../../constants/navigation";
 import Container from "../common/Container";
 
@@ -17,8 +16,8 @@ export default function Navbar() {
           className="flex items-center gap-2 group"
           aria-label="EventHub Home"
         >
-          <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-white shadow-md group-hover:scale-105 transition-transform duration-200">
-            <img src={navLogo} alt="" />
+          <span className="flex items-center justify-center w-8 h-8 rounded-lg  shadow-md group-hover:scale-105 transition-transform duration-200">
+            <img src={"navLogo.png"} alt="" />
           </span>
           <span className="text-[17px] font-extrabold text-gray-900 tracking-tight">
             Event<span className="text-primary">Hub</span>
