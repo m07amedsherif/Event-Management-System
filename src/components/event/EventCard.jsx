@@ -1,4 +1,5 @@
 import { MapPin, Calendar, Users, ImageOff } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 import Badge from "../common/Badge";
 import Button from "../common/Button";
@@ -9,18 +10,28 @@ import { CATEGORY_COLORS } from "../../constants/eventColors";
  * Keeps status rendering semantic and decoupled from raw colour classes.
  */
 const STATUS_VARIANT_MAP = {
-  Upcoming:  "status",   // purple  – matches primary brand colour
-  Ongoing:   "success",  // emerald – "in progress"
-  Completed: "muted",    // grey    – past / inactive
+  Upcoming: "status", // purple  – matches primary brand colour
+  Ongoing: "success", // emerald – "in progress"
+  Completed: "muted", // grey    – past / inactive
 };
 
 export default function EventCard({ event }) {
-  const { title, description, category, status, location, date, capacity, image } = event;
+  const {
+    title,
+    description,
+    category,
+    status,
+    location,
+    date,
+    capacity,
+    image,
+  } = event;
+  const navigate = useNavigate();
 
   return (
     <article className="group flex flex-col bg-white rounded-2xl border border-gray-200/75 shadow-sm hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1.5 hover:border-primary/30 transition-all duration-300 ease-out overflow-hidden flex-1">
       {/* Image */}
-      <div className="relative aspect-[16/9] w-full bg-gray-50 overflow-hidden shrink-0">
+      <div className="relative aspect-video w-full bg-gray-50 overflow-hidden shrink-0">
         {image ? (
           <img
             src={image}
@@ -50,7 +61,9 @@ export default function EventCard({ event }) {
         <div className="mb-4">
           <Badge
             label={category}
-            colorClass={CATEGORY_COLORS[category] ?? "bg-gray-100 text-gray-600"}
+            colorClass={
+              CATEGORY_COLORS[category] ?? "bg-gray-100 text-gray-600"
+            }
           />
         </div>
 
@@ -87,6 +100,7 @@ export default function EventCard({ event }) {
           variant="primary"
           fullWidth
           className="mt-6 shadow-sm group-hover:shadow-md transition-all duration-300"
+          onClick={() => navigate(`/events/${event.id}`)}
         >
           View Details
         </Button>

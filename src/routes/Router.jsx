@@ -4,6 +4,7 @@ import RootLayout from "../layouts/RootLayout";
 import AuthLayout from "../layouts/AuthLayout";
 
 import Events from "../pages/Events";
+import EventDetails from "../pages/EventDetails";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
@@ -26,6 +27,10 @@ export const Router = createBrowserRouter([
       {
         path: "/",
         element: <Events />,
+      },
+      {
+        path: "/events/:id",
+        element: <EventDetails />,
       },
       {
         path: "/home",

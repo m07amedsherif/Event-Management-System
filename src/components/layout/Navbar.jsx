@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
-
+import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "../../constants/navigation";
 import Container from "../common/Container";
 
@@ -14,19 +13,21 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center gap-2 group"
+          className="flex items-center group"
           aria-label="EventHub Home"
         >
-          <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-white shadow-md group-hover:scale-105 transition-transform duration-200">
-            <Zap size={18} strokeWidth={2.5} />
-          </span>
-          <span className="text-[17px] font-extrabold text-gray-900 tracking-tight">
-            Event<span className="text-primary">Hub</span>
-          </span>
+          <img 
+            src="/navLogo.png" 
+            alt="EventHub Logo" 
+            className="h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-200" 
+          />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+        <nav
+          className="hidden md:flex items-center gap-1"
+          aria-label="Main navigation"
+        >
           {NAV_LINKS.map(({ label, to }) => (
             <NavLink
               key={to}
@@ -71,7 +72,10 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div id="mobile-menu" className="md:hidden border-t border-gray-100 bg-white px-4 pb-4 pt-2 flex flex-col gap-1 animate-fade-in">
+        <div
+          id="mobile-menu"
+          className="md:hidden border-t border-gray-100 bg-white px-4 pb-4 pt-2 flex flex-col gap-1 animate-fade-in"
+        >
           {NAV_LINKS.map(({ label, to }) => (
             <NavLink
               key={to}
