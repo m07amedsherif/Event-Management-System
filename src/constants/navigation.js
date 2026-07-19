@@ -1,6 +1,6 @@
 export const NAV_LINKS = [
-  { label: "Events", to: "/" },
-  { label: "Registrations", to: "/registrations" },
-  { label: "Favourites", to: "/favourites" },
-  { label: "Requests", to: "/requests" },
+  { label: "events", to: "/" },
+  { label: "registrations", to: "/registrations" },
+  { label: "myrequests", to: "/myrequests" },
+  { label: "requests", to: "/requests" },
 ];
