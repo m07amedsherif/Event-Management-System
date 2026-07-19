@@ -14,6 +14,7 @@ import Favourites from "../pages/Favourites";
 
 import ProtectedRoute from "./ProtectedRoute";
 import PublicRoute from "./PublicRoute";
+import MyRequests from "../pages/MyRequests";
 
 export const Router = createBrowserRouter([
   // Protected Routes
@@ -47,6 +48,10 @@ export const Router = createBrowserRouter([
       {
         path: "/favourites",
         element: <Favourites />,
+      },
+      {
+        path: "/myrequests",
+        element: <MyRequests />,
       },
     ],
   },
